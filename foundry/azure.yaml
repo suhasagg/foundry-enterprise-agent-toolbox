@@ -1,0 +1,8 @@
+name: foundry-enterprise-agent-toolbox
+services:
+  enterprise-agent:
+    host: azure.ai.agent
+    kind: hosted
+    codeConfiguration:
+      runtime: python_3_13
+      entryPoint: '-m langchain_azure_ai.agents.hosting.run --protocol responses'

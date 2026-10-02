@@ -1,0 +1,16 @@
+# Production Checklist
+- [ ] Foundry project/model deployment
+- [ ] Hosted Agent identity/RBAC
+- [ ] Foundry Toolbox default version
+- [ ] Entra auth to Toolbox
+- [ ] durable LangGraph checkpointer
+- [ ] PostgreSQL run/task state
+- [ ] enterprise memory stores
+- [ ] approval service
+- [ ] DLP/information-flow controls
+- [ ] tool allowlists and immutable versions
+- [ ] Azure AI Search ACL filtering
+- [ ] sandbox/code controls
+- [ ] OTel/Foundry observability
+- [ ] load/security/chaos tests
+- [ ] DR and rollback

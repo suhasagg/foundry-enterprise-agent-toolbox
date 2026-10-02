@@ -1,0 +1,18 @@
+services:
+  agent:
+    build: .
+    env_file: .env
+    ports: ["8130:8130"]
+    depends_on: [postgres,redis]
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: agent
+      POSTGRES_USER: agent
+      POSTGRES_PASSWORD: agent
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server","--appendonly","yes"]
+    volumes: ["redisdata:/data"]
+volumes: {pgdata: {}, redisdata: {}}

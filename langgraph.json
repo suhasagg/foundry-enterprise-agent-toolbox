@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "enterprise_agent": "./foundry/langgraph_entry.py:graph"
+  },
+  "env": ".env"
+}

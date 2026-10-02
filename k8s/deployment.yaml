@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: enterprise-agent}
+spec:
+  replicas: 3
+  selector: {matchLabels: {app: enterprise-agent}}
+  template:
+    metadata: {labels: {app: enterprise-agent}}
+    spec:
+      securityContext: {runAsNonRoot: true}
+      containers:
+      - name: agent
+        image: enterprise-agent:1.0.0
+        ports: [{containerPort: 8130}]
+        livenessProbe: {httpGet: {path: /health/live,port: 8130}}
+        readinessProbe: {httpGet: {path: /health/live,port: 8130}}
+        resources:
+          requests: {cpu: "500m",memory: "512Mi"}
+          limits: {cpu: "2",memory: "2Gi"}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: enterprise-agent}
+spec:
+  selector: {app: enterprise-agent}
+  ports: [{port: 80,targetPort: 8130}]
