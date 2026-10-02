@@ -4640,25 +4640,7 @@ enterprise-agent/
 
 ---
 
-## 332. What the runnable repository intentionally does not fake
-
-A generic source archive cannot contain:
-- your Azure subscription;
-- Foundry project;
-- deployed model;
-- real Toolbox;
-- Entra tenant;
-- RBAC assignments;
-- Azure AI Search corpus;
-- corporate APIs;
-- production secrets;
-- corporate DLP policy.
-
-The project therefore provides real orchestration and integration code plus explicit cloud integration boundaries rather than embedding fake credentials or pretending cloud resources exist.
-
----
-
-## 333. Final architecture principle
+## 332. Final architecture principle
 
 A production enterprise agent is not merely:
 
